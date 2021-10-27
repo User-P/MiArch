@@ -3,7 +3,7 @@
 ln -sf /usr/share/zoneinfo/America/Mexico_City /etc/localtime
 hwclock --systohc
 # sed -i '207s/.//' /etc/locale.gen
-# locale-gen
+locale-gen
 echo "LANG=es_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=es" >> /etc/vconsole.conf
 echo "arch" >> /etc/hostname
@@ -12,13 +12,12 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:password | chpasswd
 
-pacman -S --noconfirm grub networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pulseaudio bash-completion openssh rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font sudo
-qtile xorg gdm 
+pacman -S grub networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pulseaudio bash-completion openssh rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font sudo qtile xorg gdm 
 
 grub-install --target=i386-pc /dev/sda 
 grub-mkconfig -o /boot/grub/grub.cfg
 
-sudo systemctl enable gdm
+systemctl enable gdm
 systemctl enable NetworkManager
 systemctl enable bluetooth
 systemctl enable cups.service
