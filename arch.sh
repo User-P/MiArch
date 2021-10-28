@@ -2,7 +2,7 @@
 
 ln -sf /usr/share/zoneinfo/America/Mexico_City /etc/localtime
 hwclock --systohc
-# sed -i '207s/.//' /etc/locale.gen
+sed -i '207s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=es_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=es" >> /etc/vconsole.conf
@@ -32,9 +32,9 @@ systemctl enable acpid
 
 sudo pacman -S --needed base-devel
 
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 git clone https://aur.archlinux.org/yay.git
+
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 useradd -m user-p
 echo user-p:password | chpasswd
@@ -42,6 +42,6 @@ usermod -aG libvirt user-p
 
 echo "user-p ALL=(ALL) ALL" >> /etc/sudoers.d/user-p
 
-printf "\e[1;32m N.\e[0m"
+printf "\e[1;32m Good!.\e[0m"
 
 
