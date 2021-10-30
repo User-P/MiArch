@@ -30,7 +30,7 @@ systemctl enable libvirtd
 systemctl enable firewalld
 systemctl enable acpid
 
-sudo pacman -S --needed base-devel
+pacman -S --needed base-devel
 
 git clone https://aur.archlinux.org/yay.git
 
