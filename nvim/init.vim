@@ -20,14 +20,14 @@ set shiftwidth=2
 set smarttab
 set updatetime=300
 
+so ~/.config/nvim/telescope.nvim
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/coc.vim
-
 
 colorscheme gruvbox-material
 let NERDTreeQuitOnOpen=1
 let mapleader=" "
-nmap <F5> :source %<CR>
+nmap <F5> :source ~/.config/nvim/init.vim<CR>
 if exists("g:loaded_webdevicons")
 	call webdevicons#refresh()
 endif
@@ -36,8 +36,9 @@ nnoremap <Leader>w :w<CR>
 " nnoremap <silent> <left> :vertical resize -5<CR>
 " nnoremap <silent> <up> :resize +5<CR>
 " nnoremap <silent> <down> :resize -5<CR>
-nnoremap <Leader>e :e $MYVIMRC<CR>
 nnoremap <Leader>z :e $ZSHRC<CR>
+nnoremap <Leader>c :e $MYCOCRC<CR>
+nnoremap <Leader>e :e $MYVIMRC<CR>
 
 if executable('intelephense')
   augroup LspPHPIntelephense
@@ -45,9 +46,9 @@ if executable('intelephense')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'intelephense',
         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'intelephense --stdio']},
-        \ 'whitelist': ['php'],
-        \ 'initialization_options': {'storagePath': '/tmp/intelephense'},
-        \ 'workspace_config': {
+                \ 'whitelist': ['php'],
+                \ 'initialization_options': {'storagePath': '/tmp/intelephense'},
+        \           'workspace_config': {
         \   'intelephense': {
         \     'files': {
         \       'maxSize': 1000000,
@@ -76,12 +77,7 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 let g:clang_format#auto_format = 1
 autocmd BufWritePre *.php PrettierAsync
 
-
 nmap <Leader>s <Plug>(easymotion-s2)
-    nmap <F8> :TagbarToggle<CR>
-  nmap <Leader>nt :NERDTreeFind<CR>
+nmap <F8> :TagbarToggle<CR>
+nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader>fi :Files<CR>
-
-
-
-

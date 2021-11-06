@@ -2,7 +2,8 @@ call plug#begin('~/.vim/plugged')
 
 "syntax
 Plug 'sheerun/vim-polyglot'
-Plug 'prettier/vim-prettier', {'do': 'yarn install','for': ['php']}
+Plug 'prettier/vim-prettier', {'do': 'yarn install'}
+"
 "Themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -27,5 +28,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/tagbar'
 Plug 'tpope/vim-commentary'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kyazdani42/nvim-web-devicons'
+
 
 call plug#end()

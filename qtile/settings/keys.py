@@ -6,7 +6,6 @@ from libqtile.command import lazy
 
 
 mod = "mod4"
-
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
 
@@ -35,6 +34,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Kill window
     ([mod], "w", lazy.window.kill()),
 
+    #rofi
+    ([mod], "m", lazy.spawn("rofi -show drun")),
+    ([mod], "y", lazy.spawn("rofi -show emoji -modi emoji")),
+    ([mod], "p", lazy.spawn("rofi -show window")),
     # Switch focus of monitors
     ([mod], "period", lazy.next_screen()),
     ([mod], "comma", lazy.prev_screen()),
@@ -50,13 +53,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # ------------ App Configs ------------
 
-    ([mod], "r", lazy.spawncmd()),
-    # Menu
-    # ([mod], "m", lazy.spawn("rofi -show drun")),
-
-    # Window Nav
-    # ([mod, "shift"], "m", lazy.spawn("rofi -show")),
-
+    # ([mod], "r", lazy.spawncmd()),
+    
+    ([mod,"shift"], "x", lazy.spawn("shutdown now")),
+    ([mod,"shift"], "z", lazy.spawn("reboot")),
     # Browser
     ([mod], "b", lazy.spawn("brave")),
     #([mod, "control"], "b", lazy.spawn("vivaldi-stable")),
@@ -69,11 +69,11 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "Return", lazy.spawn("alacritty")),
 
     # Redshift
-    # ([mod], "r", lazy.spawn("redshift -O 2400")),
-    # ([mod, "shift"], "r", lazy.spawn("redshift -x")),
+    ([mod], "r", lazy.spawn("redshift -O 2400")),
+    ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # Screenshot
-#    ([mod], "s", lazy.spawn("scrot")),
+    #([mod], "s", lazy.spawn("scrot")),
 
     # ------------ Hardware Configs ------------
 

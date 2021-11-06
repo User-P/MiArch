@@ -103,8 +103,10 @@ primary_widgets = [
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
+    widget.Bluetooth(**base(bg='color3')),
     powerline('dark', 'color1'),
-
+    
+    
     widget.Systray(background=colors['dark'], padding=5),
 ]
 
