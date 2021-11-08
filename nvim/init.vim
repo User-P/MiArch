@@ -16,17 +16,20 @@ set relativenumber
 set shortmess+=c
 set showmatch
 set showcmd
-set shiftwidth=2
-set smarttab
-set updatetime=300
+set updatetime=3
+set sw=4
+let NERDTreeQuitOnOpen=1
+let mapleader=" "
+nnoremap <Leader>z :e $ZSHRC<CR>
+nnoremap <Leader>c :e $MYCOCRC<CR>
 
 so ~/.config/nvim/telescope.nvim
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/coc.vim
 
 colorscheme gruvbox-material
-let NERDTreeQuitOnOpen=1
-let mapleader=" "
+
+nnoremap <Leader>e :e $MYVIMRC<CR>
 nmap <F5> :source ~/.config/nvim/init.vim<CR>
 if exists("g:loaded_webdevicons")
 	call webdevicons#refresh()
@@ -36,9 +39,6 @@ nnoremap <Leader>w :w<CR>
 " nnoremap <silent> <left> :vertical resize -5<CR>
 " nnoremap <silent> <up> :resize +5<CR>
 " nnoremap <silent> <down> :resize -5<CR>
-nnoremap <Leader>z :e $ZSHRC<CR>
-nnoremap <Leader>c :e $MYCOCRC<CR>
-nnoremap <Leader>e :e $MYVIMRC<CR>
 
 if executable('intelephense')
   augroup LspPHPIntelephense
