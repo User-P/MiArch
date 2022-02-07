@@ -35,5 +35,5 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'arnaud-lb/vim-php-namespace'
-
+Plug 'github/copilot.vim'
 call plug#end()

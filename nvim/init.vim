@@ -22,14 +22,15 @@ let NERDTreeQuitOnOpen=1
 let mapleader=" "
 nnoremap <Leader>z :e $ZSHRC<CR>
 nnoremap <Leader>c :e $MYCOCRC<CR>
+nnoremap <Leader>e :e $MYVIMRC<CR>
 
 so ~/.config/nvim/telescope.nvim
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/coc.vim
+so ~/.config/nvim/themes/airline.vim
 
 colorscheme gruvbox-material
 
-nnoremap <Leader>e :e $MYVIMRC<CR>
 nmap <F5> :source ~/.config/nvim/init.vim<CR>
 if exists("g:loaded_webdevicons")
 	call webdevicons#refresh()
@@ -76,7 +77,9 @@ endif
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 let g:clang_format#auto_format = 1
 autocmd BufWritePre *.php PrettierAsync
-
+autocmd BufWritePre *.tsx PrettierAsync
+autocmd BufWritePre *.ts PrettierAsync
+autocmd BufWritePre *.js PrettierAsync
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap <F8> :TagbarToggle<CR>
 nmap <Leader>nt :NERDTreeFind<CR>
