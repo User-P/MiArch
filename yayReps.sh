@@ -1,5 +1,5 @@
 
-yay -S brave-bin telegram-desktop zoom postman yarn whatsapp-nativefier goop neofetch onlyoffice-bin google-keep-nativefier ttf-meslo-nerd-font- powerlevel10k mariadb
+yay -S brave-bin telegram-desktop zoom postman yarn whatsapp-nativefier goop neofetch onlyoffice-bin google-keep-nativefier ttf-meslo-nerd-font-powerlevel10k mariadb
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
