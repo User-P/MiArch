@@ -12,15 +12,14 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:password | chpasswd 
 
-pacman -S grub networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pulseaudio bash-completion openssh rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font sudo qtile xorg gdm alacritty gnome nitrogen thunar picom neovim zsh zsh-completions firefox curl wget nnn code sxiv git
+pacman -S grub networkmanager network-manager-applet dialog mtools dosfstools linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils alsa-utils pulseaudio openssh rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font sudo qtile xorg gdm alacritty gnome nitrogen thunar picom neovim zsh zsh-completions firefox curl wget nnn code sxiv git
 
-grub-install --target=i386-pc /dev/sda 
-grub-mkconfig -o /boot/grub/grub.cfg
+# grub-install --target=i386-pc /dev/sda 
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable gdm
 systemctl enable NetworkManager
 systemctl enable bluetooth
-systemctl enable cups.service
 systemctl enable sshd
 systemctl enable avahi-daemon
 systemctl enable tlp
